@@ -11,7 +11,9 @@ const homecontroller = require('../controller/home-comtroller');
 // access the homecontroller functions from here
 router.get('/', homecontroller.home);
 
-// router.get('/display', homecontroller.display);
+// access the user.js here
+router.use('/users', require('./users'));
+
 
 // export the router to use globlly
 module.exports = router;
