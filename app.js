@@ -11,6 +11,12 @@ const port = 8000;
 
 app.use ('/', require('./routes'));
 
+// setup a template engine and path for it
+
+app.set('view engine', 'ejs');
+
+app.set('views', './views')
+
 
 // run the server
 app.listen(port, function(err){
