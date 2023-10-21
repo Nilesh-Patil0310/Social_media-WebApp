@@ -6,5 +6,11 @@ const userscontroller = require('../controller/users-controller');
 
 router.get('/profile', userscontroller.profile);
 
+router.get('/sing-up', userscontroller.singUp);
+
+router.get('/sing-in', userscontroller.singIn);
+
+
+
 
 module.exports = router;
