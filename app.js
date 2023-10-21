@@ -7,12 +7,19 @@ const app = express();
 // define port
 const port = 8000;
 
-// use express router
+// set static for use 
+app.use(express.static('./assets'));
 
+// import layouts library
+const expressLayouts = require('express-ejs-layouts');
+
+// use layouts
+app.use(expressLayouts);
+
+// use express router
 app.use ('/', require('./routes'));
 
 // setup a template engine and path for it
-
 app.set('view engine', 'ejs');
 
 app.set('views', './views')
