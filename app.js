@@ -13,8 +13,15 @@ app.use(express.static('./assets'));
 // import layouts library
 const expressLayouts = require('express-ejs-layouts');
 
+// import db
+const db = require('./config/mongoose');
+
 // use layouts
 app.use(expressLayouts);
+
+// set to extract the styles and script from sub pages to layout
+app.set('layout extractStyles', true);
+app.set('layout extractScripts', true);
 
 // use express router
 app.use ('/', require('./routes'));
