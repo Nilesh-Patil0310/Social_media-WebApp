@@ -1,6 +1,9 @@
 // import express library
 const express = require('express');
 
+// import cookie-parser library
+const cookieParser = require('cookie-parser');
+
 // define app
 const app = express();
 
@@ -15,6 +18,10 @@ const expressLayouts = require('express-ejs-layouts');
 
 // import db
 const db = require('./config/mongoose');
+
+// use cookies
+app.use(express.urlencoded());
+app.use(cookieParser());
 
 // use layouts
 app.use(expressLayouts);

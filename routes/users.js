@@ -10,6 +10,8 @@ router.get('/sing-up', userscontroller.singUp);
 
 router.get('/sing-in', userscontroller.singIn);
 
+router.post('/create', userscontroller.create);
+
 
 
 
