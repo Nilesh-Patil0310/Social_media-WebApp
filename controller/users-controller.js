@@ -1,10 +1,21 @@
 // import user.js here
 const User = require('../models/user');
+const { use } = require('../routes/users');
 
 module.exports.profile = function(req, res) {
-    return res.render('user-profile', {
-        title: 'user Profile'
-    })
+   if (req.cookies.user_id){
+    User.findById(req.cookies.user_id, function(err, user){
+        if (user){
+            return res.render('user-profile', {
+                title: 'user Profile',
+                user: user
+            });
+        }
+        return res.redirect('/users/sing-in');
+    });
+   }else{
+    return res.redirect('/users/sing-in');
+   }
 }
 
 // user sing up page render
