@@ -12,6 +12,8 @@ router.get('/sing-in', userscontroller.singIn);
 
 router.post('/create', userscontroller.create);
 
+router.post('/create-session', userscontroller.createSession);
+
 
 
 
